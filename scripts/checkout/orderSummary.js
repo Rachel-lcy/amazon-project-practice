@@ -17,16 +17,11 @@ export function renderOrderSummary() {
   cart.forEach((cartItem) => {
     console.log(cartItem);
     const productId = cartItem.productId;
-
     const matchingProduct = getProduct(productId);
-
-
 
     const deliveryOptionId = cartItem.deliveryOptionId;
 
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-
-
 
     const today = dayjs();
     const deliveryDate = today.add(
