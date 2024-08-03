@@ -1,8 +1,7 @@
-
-
-
 import { formatCurrency } from '../scripts/utils/money.js';
+
 console.log('Hello');
+
 if (formatCurrency(2095) === '20.95') {
   console.log('passed');
 } else {
