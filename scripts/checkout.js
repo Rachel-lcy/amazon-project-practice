@@ -7,6 +7,30 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-class.js';
 //import '../data/backend-practice.js';
 
+async function loadPage() {
+
+
+  //loadProductsFetch().then(()=>{
+
+  //})
+
+  //instead of use .then, we can use await
+  await loadProductsFetch();
+
+  await new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+
+  renderOrderSummary();
+  renderPaymentSummary();
+}
+loadPage();
+
+
+
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
@@ -19,7 +43,7 @@ Promise.all([
   renderOrderSummary();
   renderPaymentSummary();
 });
-
+*/
 
 /*
 loadProducts(() => {
